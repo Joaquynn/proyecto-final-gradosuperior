@@ -28,6 +28,7 @@ window.onload = function() {
       })
 }
 
+// Funcion que busca
 function buscar(search) {
     $("#postContainer").empty();
 
@@ -52,6 +53,7 @@ function buscar(search) {
     })
 }
 
+// Al tener las búsquedas, esto es ejecutado mostrando todos los posts
 function spawnPost(json) {
     let jsonPreview = json.text
     if (jsonPreview.length > 200) {

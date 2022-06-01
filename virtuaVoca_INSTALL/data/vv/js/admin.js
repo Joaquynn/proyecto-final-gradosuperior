@@ -1,3 +1,4 @@
+// Ventanita con tiempo arriba a la derecha
 const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
@@ -18,6 +19,7 @@ function emptyMessage() {
   }
 }
 
+// Función que quita a un usuario de la confirmación
 function denyUserButton(user) {
   $("#deny"+user).click( () => {
     $.ajax({
@@ -39,6 +41,7 @@ function denyUserButton(user) {
   })
 }
 
+// Función que aceputa a un usuario de la confirmación
 function acceptUserButton(user, count) {
   $("#accept"+user).click( () => {
     $.ajax({
@@ -219,13 +222,14 @@ bRemove.forEach(button => {
   })
 });
 
-
+// Aceptar usuario
 bAccept = document.querySelectorAll("button[type=accept]")
 bAccept.forEach(button => {
   const id = button.id.substring(6,button.id.length)
   acceptUserButton(id, localStorage.getItem('newUserCount'))
 });
 
+// Denegar usuario
 bDeny = document.querySelectorAll("button[type=deny]")
 bDeny.forEach(button => {
   const id = button.id.substring(4,button.id.length)
@@ -234,7 +238,7 @@ bDeny.forEach(button => {
   // })
 });
 
-
+// Te dice que no hay nada
 setInterval(() => {
   emptyMessage()
 }, 10);

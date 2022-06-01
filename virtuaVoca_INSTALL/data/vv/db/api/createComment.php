@@ -1,9 +1,10 @@
 <?php
 ////////////////////////
-// API - Registro
+// API - Crear comentario
 // ====JSON=========
-// user = Usuario a registrar
-// password = Contraseña SIN HASHEAR
+// author = Autor del comentario
+// text = Texto
+// post_id = ID del post
 // ====RESPUESTA====
 // title = Título de la operación
 // body = Cuerpo de la operación
@@ -21,7 +22,7 @@ $data = $_POST;
 
 
 // Poniéndole título a la operación
-$response["title"] = "Registro";
+$response["title"] = "Crear comentario";
 
 // La operación
 $sql = "INSERT INTO comments(author, text, post_id) VALUES ('" . $data["author"] . "', '" . $data["text"] . "', '" . $data["post_id"] .  "')";

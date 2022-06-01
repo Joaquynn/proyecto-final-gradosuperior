@@ -1,3 +1,4 @@
+// Barra de búsqueda
 window.onload = function() {
     $("#searchContainer").hide();
     $.ajax({
@@ -21,6 +22,7 @@ window.onload = function() {
         }
     });
     
+// Funcion que busca
     $('#searchButton').click( (e) => {
         e.preventDefault();
         buscar($("#query").val())
@@ -52,6 +54,7 @@ function buscar(search) {
     })
 }
 
+// Al tener las búsquedas, esto es ejecutado mostrando todos los posts
 function spawnPost(json) {
     let jsonPreview = json.text
     if (jsonPreview.length > 200) {

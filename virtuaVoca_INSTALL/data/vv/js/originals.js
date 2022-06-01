@@ -14,6 +14,7 @@ window.onload = function() {
         }
     })
 
+    // Barra de búsqueda
     $('#searchForm').on('keypress', function(e) {
         var keyCode = e.keyCode || e.which;
         if (keyCode === 13) { 
@@ -28,6 +29,7 @@ window.onload = function() {
       })
 }
 
+// Funcion que busca
 function buscar(search) {
     $("#postContainer").empty();
 
@@ -52,6 +54,7 @@ function buscar(search) {
     })
 }
 
+// Al tener las búsquedas, esto es ejecutado mostrando todos los posts
 function spawnPost(json) {
     let jsonPreview = json.text
     if (jsonPreview.length > 200) {

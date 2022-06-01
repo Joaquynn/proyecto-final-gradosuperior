@@ -1,8 +1,10 @@
+// Te muestra la vista previa y los carácteres que te quedan
 setInterval(() => {
     $("#postPreview").html(marked.parse($("#postBody").val()))
     $("#postBodyLength").html($("#postBody").val().length)
 }, 10);
 
+// Botón que activa y desactiva la vista previa del markdown
 $("#enablePreview").click( () => {
     if (!($("#enablePreview").prop('checked'))) {
         $("#containerPreview").hide()
@@ -11,17 +13,7 @@ $("#enablePreview").click( () => {
     }
 })
 
-
-// $("#addBold").click( () => {
-//     let val = $("#postBody").val()
-//     $("#postBody").html(val + "**VirtuaVocal** ")
-// })
-
-// $("#addItalic").click( () => {
-//     let val = $("#postBody").val()
-//     $("#postBody").html(val + "*VirtuaVocal* ")
-// })
-
+// Valida el post devolviendo false si no está correcto
 function validarPost(title, text) {
     if (!text && !title) {
         Swal.fire(
@@ -57,6 +49,7 @@ function validarPost(title, text) {
     }
     return true
 }
+// Consigue el tipo de post de los botones circulares y los valida
 function getPostType() {
     resultado = -1
     let element = document.getElementsByName('type')
@@ -68,6 +61,7 @@ function getPostType() {
     return resultado
 }
 
+// Guarda el post
 $("#postSubmit").click( (e) => {
     const title = $("#postTitle").val() 
     const text = $("#postBody").val()
@@ -144,67 +138,68 @@ $("#postSubmit").click( (e) => {
     }
 })
 
+// Añade todos los addons de Markdown
 $("#addBold").click( () => {
-    const name = localStorage.getItem('user')
-    const mdAdd = "**"+name+"** "
-    const postBodyContent = $("#postBody").val()
-    const final = postBodyContent+mdAdd
+    let name = localStorage.getItem('user')
+    let mdAdd = "**"+name+"** "
+    let postBodyContent = $("#postBody").val()
+    let final = postBodyContent+mdAdd
     $("#postBody").text(final)
 })
 
 $("#addItalic").click( () => {
-    const name = localStorage.getItem('user')
-    const mdAdd = "*"+name+"* "
-    const postBodyContent = $("#postBody").val()
-    const final = postBodyContent+mdAdd
+    let name = localStorage.getItem('user')
+    let mdAdd = "*"+name+"* "
+    let postBodyContent = $("#postBody").val()
+    let final = postBodyContent+mdAdd
     $("#postBody").text(final)
 })
 
 $("#addBoldItalic").click( () => {
-    const name = localStorage.getItem('user')
-    const mdAdd = "***"+name+"*** "
-    const postBodyContent = $("#postBody").val()
-    const final = postBodyContent+mdAdd
+    let name = localStorage.getItem('user')
+    let mdAdd = "***"+name+"*** "
+    let postBodyContent = $("#postBody").val()
+    let final = postBodyContent+mdAdd
     $("#postBody").text(final)
 })
 
 
 $("#addPoints").click( () => {
-    const name = localStorage.getItem('user')
-    const mdAdd = `* ${name}\n* ${name}\n    * ${name}\n    * ${name}`
-    const postBodyContent = $("#postBody").val()
-    const final = postBodyContent+mdAdd
+    let name = localStorage.getItem('user')
+    let mdAdd = `* ${name}\n* ${name}\n    * ${name}\n    * ${name}`
+    let postBodyContent = $("#postBody").val()
+    let final = postBodyContent+mdAdd
     $("#postBody").text(final)
 })
 
 
 $("#addNumbers").click( () => {
-    const name = localStorage.getItem('user')
-    const mdAdd = `1. ${name}\n2. ${name}\n    1. ${name}\n    2. ${name}`
-    const postBodyContent = $("#postBody").val()
-    const final = postBodyContent+mdAdd
+    let name = localStorage.getItem('user')
+    let mdAdd = `1. ${name}\n2. ${name}\n    1. ${name}\n    2. ${name}`
+    let postBodyContent = $("#postBody").val()
+    let final = postBodyContent+mdAdd
     $("#postBody").text(final)
 })
 
 $("#addDivision").click( () => {
-    const mdAdd = `---`
-    const postBodyContent = $("#postBody").val()
-    const final = postBodyContent+mdAdd
+    let mdAdd = `---`
+    let postBodyContent = $("#postBody").val()
+    let final = postBodyContent+mdAdd
     $("#postBody").text(final)
 })
 
 $("#addLink").click( () => {
-    const name = localStorage.getItem('user')
-    const mdAdd = `[${name}](https://virtuavoca.es)`
-    const postBodyContent = $("#postBody").val()
-    const final = postBodyContent+mdAdd
+    let name = localStorage.getItem('user')
+    let mdAdd = `[${name}](https://virtuavoca.es)`
+    let postBodyContent = $("#postBody").val()
+    let final = postBodyContent+mdAdd
     $("#postBody").text(final)
 })
 
 $("#addHeaders").click( () => {
-    const name = localStorage.getItem('user')
-    const mdAdd = `# ${name}\n## ${name}\n### ${name}`
-    const postBodyContent = $("#postBody").val()
-    const final = postBodyContent+mdAdd
+    let name = localStorage.getItem('user')
+    let mdAdd = `# ${name}\n## ${name}\n### ${name}`
+    let postBodyContent = $("#postBody").val()
+    let final = postBodyContent+mdAdd
     $("#postBody").text(final)
 })

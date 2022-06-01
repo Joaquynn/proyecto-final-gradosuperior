@@ -1,3 +1,4 @@
+// Consigue la info del post
 function getPostInfo(id) {
     $.ajax({
         url: "db/api/readPost.php",
@@ -20,6 +21,7 @@ function getPostInfo(id) {
     })
 }
 
+// Recarga los comentarios
 function spawnComments(comments) {
     $("#commentSection").empty();
     comments.forEach(comment => {
@@ -35,6 +37,7 @@ function spawnComments(comments) {
     });
 }
 
+// Consigue los comentarios de un post
 function getPostComments(id) {
     $.ajax({
         url: "db/api/getComments.php",
@@ -43,13 +46,9 @@ function getPostComments(id) {
         success: function (e) {
             try {
                 e = JSON.parse(e)
-                // $("#noCommentsText").text("aa")
-
             } catch (error) {
-                // $("#noCommentsText").text("No hay comentarios...")
             }
             spawnComments(e)
-            // $("#jsoncoms").text(e)
         }
     })
 }
@@ -59,10 +58,9 @@ function getPostComments(id) {
 window.onload = function () {
     getPostComments( $("#idcoms").val() )
     console.log( $("#jsoncoms").html() )
-    // spawnComments( JSON.parse($("#jsoncoms").val()) )
-
     $("#previewContent").hide()
 
+    // Valida y comenta
     $("#commentSubmit").click( () => {
         if ($("#commentContent").val().length == 0) {
             Swal.fire(
@@ -96,6 +94,7 @@ window.onload = function () {
         $("#previewContent").html(marked.parse($("#commentContent").val()))
     }, 10);
 
+    // Esconde o muestra la vista previa del comentario
     $("#previewButton").click( () => {
         console.log($("#previewButton").hasClass("btn-success"))
         if ($("#previewButton").hasClass("btn-success")) {

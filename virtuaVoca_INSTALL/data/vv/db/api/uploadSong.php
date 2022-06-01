@@ -1,4 +1,20 @@
 <?php
+////////////////////////
+// API - Subir un archivo
+// ====JSON=========
+// file = Archivo
+// ====RESPUESTA====
+// title = Título de la operación
+// body = Cuerpo de la operación
+//  \____ cx = Conexión a la base de datos
+//        - 1 = Conexión correcta
+//        - X = Conexión errónea
+//  \____ sql = SQL ejecutado
+//  \____ exec = Resultado de la ejecución
+//  \____ ext = Extensión del archivo
+//  \____ media = Audio final
+////////////////////////
+
     session_start();
     if (!isset($_FILES['file']['name'])) {
         $response["result"] = true;

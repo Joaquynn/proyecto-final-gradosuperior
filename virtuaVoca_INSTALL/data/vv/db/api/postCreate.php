@@ -1,9 +1,12 @@
 <?php
 ////////////////////////
-// API - Registro
+// API - Crear un post
 // ====JSON=========
-// user = Usuario a registrar
-// password = Contraseña SIN HASHEAR
+// title = Titulo del post
+// text = Contenido del post
+// media = Audio del post (Si tiene)
+// author = Autor del post
+// type = Tipo del post
 // ====RESPUESTA====
 // title = Título de la operación
 // body = Cuerpo de la operación

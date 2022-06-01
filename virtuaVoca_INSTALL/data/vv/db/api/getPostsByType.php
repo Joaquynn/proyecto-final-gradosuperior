@@ -1,9 +1,8 @@
 <?php
 ////////////////////////
-// API - Login
+// API - Conseguir posts por tipo
 // ====JSON=========
-// user = Usuario a identificar
-// password = Contraseña SIN HASHEAR
+// type = Tipo de post
 // ====RESPUESTA====
 // title = Título de la operación
 // body = Cuerpo de la operación
@@ -11,12 +10,7 @@
 //        - 1 = Conexión correcta
 //        - X = Conexión errónea
 //  \____ sql = SQL ejecutado
-//  \____ user = Usuario encontrado en la base de datos
-//  \____ msg = Mensaje de información de la consulta
-//  \____ result = Resultado numeral de la operación
-//        - 0 = No se ha encontrado ni el nombre ni la contraseña
-//        - 1 = Se ha encontrado el nombre de usuario, pero no la contraseña
-//        - 2 = Se han encontrado los dos juntos
+//  \____ exec = Resultado de la ejecución
 ////////////////////////
 
 // Preparando los datos recibidos

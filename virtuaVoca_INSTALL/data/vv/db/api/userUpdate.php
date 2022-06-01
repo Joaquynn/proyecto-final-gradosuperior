@@ -1,4 +1,10 @@
 <?php
+////////////////////////
+// API - Actualizar datos a un usuario
+// ====JSON=========
+// username = Usuario a actualizar
+////////////////////////
+
 include('../db_connection.php');
 $data = $_POST;
 if ($data["column"] == "password") {

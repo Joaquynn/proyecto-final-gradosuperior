@@ -1,4 +1,10 @@
 <?php
+////////////////////////
+// API - Banear a un usuario
+// ====JSON=========
+// username = Usuario a banear
+////////////////////////
+
 ini_set("display_errors", 1);
 include('../db_connection.php');
 $data = $_POST;
